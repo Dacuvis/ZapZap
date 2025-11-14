@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import gam from "../image/Reze - Chainsaw man.jpeg";
+import '../styles/global.css'
+---
+
+<Image src={gam} alt="idk" class="rounded-full border-2 h-[50vh] transition-all delay-100 w-auto" id="amigos" />
+
+<div id="container"></div>
+
+<script>
+    const ami = document.getElementById("amigos")
+    const idk = document.createElement('p')
+    const contain = document.getElementById('container')
+
+    let rot = 0;
+    let i = 0
+
+    ami?.addEventListener('click', () => {
+        rot += 90;
+        i++
+        ami.style.transform = `rotate(${rot}deg)`
+        idk.textContent = `${i}`
+        contain?.append(idk)
+    })
+</script>
